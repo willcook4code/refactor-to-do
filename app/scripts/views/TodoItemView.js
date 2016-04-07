@@ -5,6 +5,9 @@ import $ from 'jquery';
 const ToDoView = Backbone.View.extend({
 	tagName: 'li',
 	className: 'item',
+	events: {
+        'click': 'removeItems'
+    },
 	initialize: function(item) {
 		this.item = item;
 		this.render();
@@ -19,6 +22,9 @@ const ToDoView = Backbone.View.extend({
 		inputBank.push(this.item);
 		console.log(inputBank);
 	},
+	removeItems: function() {
+        $(this.el).remove();
+    }
 });
 
 export default ToDoView
