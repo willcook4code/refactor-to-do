@@ -6,10 +6,8 @@ import $ from 'jquery';
 
 
 $('#add').click(function () {
-	console.log($('#listerInput').val());
-	const newItem = new toDoView($('#listerInput').val());
+	let newItem = new toDoView($('#listerInput').val());
 	$('#listerInput').val('');
-	console.log(newItem);
-	return newItem;
+	$('.listBox').append(newItem.el);
 });
 
